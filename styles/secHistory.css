@@ -1,6 +1,6 @@
 .history {
-  padding: 40px 0;
-  padding-bottom: clamp(80px, 25vw, 400px);
+  padding: 100px 0;
+  padding-bottom: clamp(200px, 35vw, 520px);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,14 +16,14 @@
 
 .text::before {
   content: "History";
-  font-size: clamp(10rem, 40vw, 26rem);
+  font-size: clamp(10rem, 40vw, 30rem);
   font-family: 'PT Serif', serif;
   font-weight: 700;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  opacity: .05;
+  opacity: .03;
   user-select: none;
   z-index: 0;
 }
@@ -37,6 +37,7 @@
 .history-title {
   font-family: 'PT Serif', serif;
   margin-bottom: 18px;
+  font-size: 2.5rem;
 }
 
 .history-p {
@@ -48,6 +49,19 @@
   line-height: 2;
 }
 
+.history::after {
+  --lines-gap: 3vw;
+  content: '';
+  width: 100%;
+  height: clamp(4px, 0.5vw, 10px);
+  background: #fff;
+  box-shadow: 0px calc(var(--lines-gap)*-1) 0px 0px #fff, 0px calc(var(--lines-gap)*-2) 0px 0px #fff;
+  position: absolute;
+  bottom: 13vw;
+  z-index: 0;
+  opacity: .03;
+}
+
 .history-imgs {
   display: flex;
   padding: 0 var(--padding-p);
@@ -57,6 +71,7 @@
   position: absolute;
   bottom: 0;
   transform: translateY(30%);
+  z-index: 1;
 }
 
 .history-imgs > img {
@@ -70,15 +85,47 @@
   transform: translateY(15%);
 }
 
+@media screen and (min-width: 2000px) {
+  .history-imgs {
+    justify-content: center;
+    gap: 50px;
+  }
+  .history::after {
+    --lines-gap: 70px;
+    bottom: 180px;
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .history-p {
     line-height: 1.8;
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .history-imgs {
-    justify-content: center;
-    gap: 50px;
+@media screen and (max-width: 425px) {
+  .history-imgs > img:first-child {
+    display: none;
+  }
+
+  .history-imgs > img:last-child {
+    width: 100%;
+  }
+
+  .history::after {
+    bottom: clamp(80px, 28vw, 120px);
+    --lines-gap: 20px
+  }
+
+  .text::before {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .history {
+    padding-bottom: 220px;
   }
 }

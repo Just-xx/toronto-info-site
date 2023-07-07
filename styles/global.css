@@ -15,10 +15,19 @@ body {
   margin: 0;
 }
 
+p, h1 {
+  margin: 0;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
 #app {
   background-color: var(--secondary);
   color: #fff;
   min-width: 320px;
+  overflow-x: hidden;
 }
 
 
