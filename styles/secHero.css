@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   height: clamp(730px, 100vh, 950px);
-  background: url('assets/bg_back.png');
+  background: url('/assets/bg_back.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -35,7 +35,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background: url('assets/bg_front.png');
+  background: url('/assets/bg_front.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
