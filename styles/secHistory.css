@@ -79,6 +79,8 @@
   min-height: 80px;
   width: clamp(80px, 48%, 800px);
   object-fit: cover;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
 }
 
 .history-imgs > img:first-child {
