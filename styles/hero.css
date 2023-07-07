@@ -1,0 +1,269 @@
+
+.hero {
+  padding: 0 var(--padding-p);
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: clamp(730px, 100vh, 950px);
+  background: url('assets/bg_back.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.hero::before {
+  content: 'City with\A dreams';
+  white-space: pre;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -10%;
+  width: min-content;
+  height: min-content;
+  font-size: 12vw;
+  font-family: 'PT Serif', serif;
+  opacity: .25;
+  user-select: none;
+  color: #fff;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url('assets/bg_front.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.logo a::before {
+  content: 'Toronto.';
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  opacity: .4;
+}
+
+.topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 40px 0;
+  z-index: 10;
+}
+
+.topbar a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+  font-size: .9rem;
+}
+
+.section-content {
+  width: 40%;
+  color: var(--primary);
+  margin: 80px 0;
+  z-index: 10;
+  position: relative;
+}
+
+.section-content::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  filter: blur(60px);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.hero-text > * {
+  margin: 0;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  white-space: nowrap;
+}
+
+.hero-p {
+  font-size: .9rem;
+  line-height: 1.85;
+}
+
+.btn {
+  padding: 12px 90px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background-color: #364b53;
+}
+
+.bars {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.bar-light, .bar-dark {
+  height: 70px;
+  font-size: .9rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-color: rgb(0, 0, 0, .2);
+  backdrop-filter: blur(2px);
+}
+
+.bar-light {
+  z-index: 0;
+  background-color: rgb(255, 255, 255, .2);
+}
+
+.bar-dark > a {
+  animation: arrow-motion 1s infinite ease-in-out alternate;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 5px 14px;
+  border-radius: 10px;
+  transition: background-color 80ms linear;
+  color: #fff;
+  text-decoration: none;
+}
+
+.bar-dark > a:hover {
+  background-color: rgba(255, 255, 255, .1);
+  cursor: pointer;
+}
+
+.fa-arrow-down {
+  font-size: .6rem;
+  margin-left: 10px;
+}
+
+@keyframes arrow-motion {
+  from {
+    transform: translateY(-1px);
+  }
+  to {
+    transform: translateY(3px);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .section-content {
+    margin: 20px 0;
+    width: 50%;
+  }
+
+  .hero-text {
+    gap: 15px;
+  }
+
+  .hero::before {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  :root {
+    --padding-p: 60px;
+    --padding-s: 80px;
+  }
+
+  .section-content {
+    width: 100%;
+  }
+
+  .hero-title {
+    white-space: normal;
+  }
+
+  .hero-p {
+    text-align: justify;
+  }
+
+  .hero::before {
+    right: auto;
+    top: auto;
+    left: 50%;
+    bottom: 140px;
+    transform: translateX(-50%);
+    line-height: .95;
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --padding-p: 40px;
+    --padding-s: 50px;
+  }
+
+  .btn {
+    padding: 10px 60px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .section-content {
+    margin: 0;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}

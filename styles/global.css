@@ -1,0 +1,47 @@
+:root {
+  --primary: #101A1E;
+  --secondary: #CFD7D9;
+  --padding-p: 100px;
+  --padding-s: 140px
+}
+
+html {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+#app {
+  background-color: var(--secondary);
+  color: #fff;
+  min-width: 320px;
+}
+
+
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 13px;
+  }
+}
