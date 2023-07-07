@@ -71,7 +71,7 @@
   position: absolute;
   bottom: 0;
   transform: translateY(30%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .history-imgs > img {
@@ -81,10 +81,19 @@
   object-fit: cover;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
+  transition: transform 100ms ease-out;
 }
 
 .history-imgs > img:first-child {
   transform: translateY(15%);
+}
+
+.history-imgs > img:last-child:hover {
+  transform: translateY(-5px);
+}
+
+.history-imgs > img:first-child:hover {
+  transform: translateY(calc(15% - 5px));
 }
 
 @media screen and (min-width: 2000px) {

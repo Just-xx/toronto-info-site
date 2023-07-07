@@ -1,7 +1,7 @@
 .geography {
   padding: 0 var(--padding-s);
   padding-top: clamp(150px, 18vw, 400px);
-  padding-bottom: 100px;
+  padding-bottom: 180px;
   color: var(--primary);
   text-align: right;
   box-sizing: border-box;
@@ -20,6 +20,7 @@
 
 .geography-p {
   line-height: 2;
+  font-size: .95rem;
 }
 
 .geography::after {
