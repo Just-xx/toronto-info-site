@@ -1,0 +1,119 @@
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.topbar {
+  padding-left: var(--padding-p);
+  padding-right: var(--padding-p);
+}
+
+.galery {
+  background-color: var(--secondary);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  overflow: hidden;
+}
+
+.galery-title, .galery-subtitle {
+  color: var(--primary);
+  text-align: center;
+}
+
+.galery-title {
+  margin-bottom: 14px;
+}
+
+.galery-subtitle {
+  font-size: .9rem;
+  font-weight: 300;
+}
+
+.photos-container {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 60px var(--padding-p);
+  box-sizing: border-box;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.btn.s {
+  background-color: var(--secondary);
+  color: var(--primary);
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  font-weight: 600;
+}
+
+.btn.s:hover {
+  background-color: #a5adaf;;
+}
+
+.photos-container::after, .photos-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.photos-container::before {
+  content: "Galery";
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 34vw;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  z-index: 0;
+  color: #172125;
+  
+}
+
+.photos-container::after {
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  background-color: #172125;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.photos-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  place-items: stretch;
+  gap: 20px;
+}
+
+.photos-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 3px;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .photos-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .photos-wrapper {
+    grid-template-columns: 1fr;
+    gap: 8px
+  }
+}

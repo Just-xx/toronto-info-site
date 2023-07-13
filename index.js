@@ -1,8 +1,7 @@
 import './styles/global.css'
-import './styles/secHero.css'
-import './styles/secHistory.css'
-import './styles/secGeography.css'
-
+import './styles/hero.css'
+import './styles/history.css'
+import './styles/geography.css'
 
 // PARALAX
 const heroBgFront = document.querySelector('.hero-bg-front');

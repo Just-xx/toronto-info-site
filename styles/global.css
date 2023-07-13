@@ -15,13 +15,35 @@ body {
   margin: 0;
 }
 
-p, h1 {
+p, h1, h2 {
   margin: 0;
 }
+
 
 h1 {
   line-height: 1.2;
 }
+
+.btn {
+  padding: 12px 90px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 80ms linear;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: #364b53;
+}
+
 
 #app {
   background-color: var(--secondary);
@@ -30,6 +52,11 @@ h1 {
   overflow-x: hidden;
 }
 
+
+h1.title {
+  font-family: 'PT Serif', serif;
+  font-size: 2.5rem;
+}
 
 @media screen and (max-width: 1440px) {
   html {
